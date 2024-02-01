@@ -4,7 +4,7 @@ An extension for [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOM
 * can lock image height to width. Change height and width will change to match it, so that aspect ratio is maintained.
 * can snap your image to the closest useful aspect ratio. (i.e. 4:3, 16:9, 1:1, etc.)
 
-#### Text2Image View
+#### img2img View
 ![Ratio Lock](./screenshots/screenshot.png?raw=true "Ratio Lock")
 
 ## Installation
