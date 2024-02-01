@@ -9,13 +9,15 @@ An extension for [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOM
 
 ## Installation
 
-The extension can be installed directly from within the **Extensions** tab within the Webui.
+The extension can be installed directly from within the **Extensions** tab within the Webui. 
+"Install from URL" and paste in the git repo: https://github.com/ima18h/sd-ratio-lock-plus
 
 Manual install from within the webui directory:
 
-	git clone https://github.com/bit9labs/sd-ratio-lock extensions/sd-ratio-lock
+	git clone https://github.com/ima18h/sd-ratio-lock-plus
 
-and restart your stable-diffusion-webui. The lock ratio dropdown will appear under the width and height sliders.
+must be inside extensions folder, and then restart your stable-diffusion-webui. 
+The lock ratio dropdown will appear under the width and height sliders.
 
 ## Use
 
