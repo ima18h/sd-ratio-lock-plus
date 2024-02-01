@@ -99,12 +99,14 @@ class RatioLock(scripts.Script):
         _closest_diff = float('inf')
         actual_ratio = width / height
 
-        for key, ratio in self.image_ratios.items():
-            if ratio is not None:
-                diff = abs(ratio - actual_ratio)
-                if diff < _closest_diff:
-                    _closest_diff = diff
-                    closest_key = key
+        items = iter(self.image_ratios.items())
+        next(items)  # Skip the first item (None)
+
+        for key, ratio in items:
+            diff = abs(ratio - actual_ratio)
+            if diff < _closest_diff:
+                _closest_diff = diff
+                closest_key = key
 
         # If the difference is over a certain threshold, check the lower priority ratios
         if _closest_diff > 0.5:
