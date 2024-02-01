@@ -1,6 +1,8 @@
-## sd-ratio-lock
+## sd-ratio-lock-plus
 
-An extension for [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) that maintains a locked ratio between the image width and height sliders.
+An extension for [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) that deals with aspect ratios. 
+* can lock image height to width. Change height and width will change to match it, so that aspect ratio is maintained.
+* can snap your image to the closest useful aspect ratio. (i.e. 4:3, 16:9, 1:1, etc.)
 
 #### Text2Image View
 ![Ratio Lock](./screenshots/screenshot.png?raw=true "Ratio Lock")
@@ -24,6 +26,6 @@ NOTICE: Currently the way that gradio callbacks work this only works when the wi
 ## Roadmap
 
 - Allow for custom ratios
-- Increase tolerance for the find button
 
 ## Credit
+bit9labs
