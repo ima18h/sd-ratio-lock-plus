@@ -19,13 +19,15 @@ Manual install from within the webui directory:
 must be inside extensions folder, and then restart your stable-diffusion-webui. 
 The lock ratio dropdown will appear under the width and height sliders.
 
-## Use
+## How to use
 
-Select an option from the Image Ratio dropdown. This will lock the height slider to the width slider. To unlock the sliders select None from the dropdown. Select the magnifying glass to attempt to identify the Ratio based on the current width and heights.
+Select an option from the Image Ratio dropdown. This will make it so pressing up/down on width, will change height accordingly. 
+If you do a big change in width by dragging the slider, then you might have to press up/down to make the height update correctly. 
+Changing the height will not change anything, even when an aspect ratio is selected. 
+To unlock the sliders select None from the dropdown. 
+Select the magnifying glass to identify the Ratio based on the current width and heights. It will always select the closest useful aspect ratio.
 
-NOTICE: Currently the way that gradio callbacks work this only works when the width changes. Also since this is a client to server to client solution the order of operations sometimes gets missed. (i.e. It requires you to jiggle the width slider to get the correct height)
-
-## Roadmap
+## TODO / Roadmap
 
 - add option to keep the exact aspect ratio of image
 - Allow for custom ratios
