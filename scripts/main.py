@@ -10,15 +10,9 @@ class RatioLock(scripts.Script):
     image_ratios = {
         "None": None,
         "1:1 - Square": 1.0,
-        "4:3 - Standard": 4 / 3,
-        "16:9 - Widescreen": 16 / 9,
-        "3:2 - Classic": 3 / 2,
-        "5:4 - Medium Format": 5 / 4,
-        "3:1 - Panorama": 3 / 1,
+        "Instagram Landscape": 540 / 283,
         "8:10 - Portrait": 8 / 10,
-        "2:1 - Cinemascope": 2.0,
-        "9:16 - Vertical Video": 9 / 16,
-        "21:9 - Ultrawide": 21 / 9
+        "9:16 - Vertical Video": 9 / 16
     }
 
     # Slider controls from A1111 WebUI.
