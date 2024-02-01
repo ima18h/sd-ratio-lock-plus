@@ -25,6 +25,7 @@ NOTICE: Currently the way that gradio callbacks work this only works when the wi
 
 ## Roadmap
 
+- add option to keep the exact aspect ratio of image
 - Allow for custom ratios
 
 ## Credit
