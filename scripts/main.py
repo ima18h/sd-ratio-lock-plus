@@ -88,10 +88,18 @@ class RatioLock(scripts.Script):
         return height
     
     def on_dims_detect(self, width, height):
+        closest_key = "None"
+        _closest_diff = float('inf')
+        actual_ratio = width / height
+        
         for key, ratio in self.image_ratios.items():
-            if ratio is not None and abs(ratio - (width / height)) < 0.001:
-                return key
-        return "None"
+            if ratio is not None:
+                diff = abs(ratio - actual_ratio)
+                if diff < _closest_diff:
+                    _closest_diff = diff
+                    closest_key = key
+                    
+        return closest_key
 
     @staticmethod
     def on_before_component(component, **_kwargs):
