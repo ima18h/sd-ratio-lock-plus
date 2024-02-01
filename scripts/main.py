@@ -103,15 +103,15 @@ class RatioLock(scripts.Script):
         next(items)  # Skip the first item (None)
 
         for key, ratio in items:
-            diff = abs(ratio - actual_ratio)
+            diff = abs((actual_ratio - ratio) / actual_ratio)
             if diff < _closest_diff:
                 _closest_diff = diff
                 closest_key = key
 
         # If the difference is over a certain threshold, check the lower priority ratios
-        if _closest_diff > 0.5:
+        if _closest_diff > 0.2:
             for key, ratio in self.image_ratios_2.items():
-                diff = abs(ratio - actual_ratio)
+                diff = abs((actual_ratio - ratio) / actual_ratio)
                 if diff < _closest_diff:
                     _closest_diff = diff
                     closest_key = key
