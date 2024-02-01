@@ -14,6 +14,14 @@ class RatioLock(scripts.Script):
         "8:10 - Portrait": 8 / 10,
         "9:16 - Vertical Video": 9 / 16
     }
+    image_ratios_2 = {
+        "4:3 - Standard": 4 / 3,
+        "3:2 - Classic": 3 / 2,
+        "5:4 - Medium Format": 5 / 4,
+        "3:1 - Panorama": 3 / 1,
+        "2:1 - Cinemascope": 2.0,
+        "16:9 - Widescreen": 16 / 9
+    }
 
     # Slider controls from A1111 WebUI.
     txt2img_w_slider = None
@@ -93,6 +101,14 @@ class RatioLock(scripts.Script):
 
         for key, ratio in self.image_ratios.items():
             if ratio is not None:
+                diff = abs(ratio - actual_ratio)
+                if diff < _closest_diff:
+                    _closest_diff = diff
+                    closest_key = key
+
+        # If the difference is over a certain threshold, check the lower priority ratios
+        if _closest_diff > 0.5:
+            for key, ratio in self.image_ratios_2.items():
                 diff = abs(ratio - actual_ratio)
                 if diff < _closest_diff:
                     _closest_diff = diff
